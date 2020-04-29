@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+  
+  <body>
+    <div id="app" class="wrapper">
+      <header>
+        <h1>Soapday</h1>
+      </header>
+      <main>
+        <!-- Sidebar / drawer -->
+        <section id="detailsArea">
+          <div id="login">
+            <form action="" method="get" class="">
+              <fieldset>
+                <legend>SUV Login</legend>
+                <div class="form">
+                  <label for="suv">suv: </label>
+                  <input
+                    name="suv"
+                    id="suv"
+                    class="inputType"
+                    value="01cc2fccfa9cee0e6"
+                  />
+                </div>
+                <div class="form">
+                  <label for="password">Password: </label>
+                  <input
+                    name="password"
+                    id="password"
+                    class="inputType"
+                    value="m+sjeZD0qETYpP2S"
+                  />
+                </div>
+                <div class="form">
+                  <label for="username">Username: </label>
+                  <input
+                    name="username"
+                    id="username"
+                    class="inputType"
+                    value="Invenory_specialist_500.1"
+                  />
+                </div>
+              </fieldset>
+
+              <fieldset>
+                <legend>Web Service Operation</legend>
+                <div class="form">
+                  <label for="wsDropdown">Web Service:</label>
+                  <input
+                    list="webService"
+                    id="wsDropdown"
+                    class="inputType"
+                    name="webService"
+                  />
+                  <datalist id="webService"></datalist>
+                </div>
+                <div class="form">
+                  <label for="opDropdown">Operation:</label>
+                  <input
+                    list="operation"
+                    id="opDropdown"
+                    class="inputType"
+                    name="operation"
+                  />
+                  <datalist id="operation"></datalist>
+                </div>
+                <div class="form">
+                  <label for="vrsDropdown">Version:</label>
+                  <input
+                    list="version"
+                    id="vrsDropdown"
+                    class="inputType"
+                    name="version"
+                    value="33.0"
+                  />
+                  <datalist id="version"></datalist>
+                </div>
+              </fieldset>
+            </form>
+          </div>
+        </section>
+
+        <!-- Sidebar / drawer -->
+        <section id="xmlArea">
+          <div id="tabBar" class="tab"> 
+              <button id="requestBtn" class="tablinks active">XML Request</button>  
+              <button id="responseBtn" class="tablinks">XML Response</button>  
+          </div>
+          <div id="requestArea" class="tabContent">
+            <textarea rows="20" cols="80" id="request">Request</textarea>
+          </div> 
+
+          <div id="responseArea" class="tabContent">
+            <textarea rows="20" cols="80" id="response">Response</textarea>
+          </div>
+        </section>
+          
+         
+      </main>
+      <footer>
+        <button id="submit">Submit</button>
+      </footer>
+    </div>
+    <script src="src/index.js"></script>
+  </body>
+</html>
