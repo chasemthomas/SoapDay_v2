@@ -1,6 +1,14 @@
 import "./normalize.css";
 import "./styles.css";
 
+var requestEditor = ace.edit("requestArea");
+requestEditor.setTheme("ace/theme/textmate");
+requestEditor.getSession().setMode("ace/mode/xml");
+
+var responseEditor = ace.edit("responseArea");
+responseEditor.setTheme("ace/theme/textmate");
+responseEditor.getSession().setMode("ace/mode/xml");
+
 // request button click handler
 let reqBtn = document.getElementById("requestBtn");
 reqBtn.addEventListener("click", showRequest, false);
