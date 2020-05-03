@@ -4,14 +4,17 @@ import "./styles.css";
 var requestEditor = ace.edit("requestArea");
 requestEditor.setTheme("ace/theme/textmate");
 requestEditor.getSession().setMode("ace/mode/xml");
+// requestEditor.session.setUseWrapMode(true);
 
 var responseEditor = ace.edit("responseArea");
 responseEditor.setTheme("ace/theme/textmate");
 responseEditor.getSession().setMode("ace/mode/xml");
+// responseEditor.session.setUseWrapMode(true);
 
 // request button click handler
 let reqBtn = document.getElementById("requestBtn");
 reqBtn.addEventListener("click", showRequest, false);
+
 // response button click handler
 let respBtn = document.getElementById("responseBtn");
 respBtn.addEventListener("click", showResponse, false);
@@ -44,12 +47,12 @@ function showSelected(content, button) {
   document.getElementById(content).style.display = "block";
 }
 
-function showRequest() {
+export function showRequest() {
   hideAll();
   showSelected("requestArea", "requestBtn");
 }
 
-function showResponse() {
+export function showResponse() {
   hideAll();
   showSelected("responseArea", "responseBtn");
 }

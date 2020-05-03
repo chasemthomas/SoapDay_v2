@@ -168,7 +168,7 @@ label {
 
 #requestArea {
   min-width: 600px;
-  width: 90%;
+  /* width: 800px; */
   display: block;
   height: 90%;
   border: 1px solid #ced3d9;
@@ -177,7 +177,7 @@ label {
 
 #responseArea {
   min-width: 600px;
-  width: 90%;
+  /* width: 800px; */
   display: block;
   height: 90%;
   border: 1px solid #ced3d9;
