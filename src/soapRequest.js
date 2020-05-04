@@ -2,13 +2,17 @@ import "./styles.css";
 import { showRequest } from "./index.js";
 import { showResponse } from "./index.js";
 
+let format = require("xml-formatter");
+let responseEditor = ace.edit("responseArea");
+
 // HTML Selectors
 const suv = document.getElementById("suv").value;
 const password = document.getElementById("password").value;
 const username = document.getElementById("username").value;
-// const username = "superuser";
-const requestArea = document.getElementById("requestArea");
-const responseArea = document.getElementById("responseArea");
+const webService = document.getElementById("wsDropdown").value;
+const operation = document.getElementById("opDropdown").value;
+const requestArea = document.getElementById("requestArea").value;
+const responseArea = document.getElementById("responseArea").innerText;
 // const resetButton = document.getElementById("reset");
 const submitButton = document.getElementById("submit");
 
@@ -22,12 +26,20 @@ const proxyurl = "https://cors-anywhere.herokuapp.com/";
 let url =
   "https://i-" +
   suv +
-  ".workdaysuv.com/ccx/service/super/Resource_Management/v33.0";
+  ".workdaysuv.com/ccx/service/super/" +
+  webService +
+  "/v33.0";
 
-let body =
+let bodyText =
   '<bsvc:Get_Purchase_Items_Request bsvc:version="v33.0"><bsvc:Request_References><bsvc:Purchase_Item_Reference bsvc:Descriptor=""><bsvc:ID bsvc:type="wid">c5484e4ea52610e2d5127574b8f149b4</bsvc:ID></bsvc:Purchase_Item_Reference></bsvc:Request_References></bsvc:Get_Purchase_Items_Request>';
+// requestEditor.getSession().setValue(format(bodyText));
 
-// requestArea.innerText = body;
+// This code is needed when user pastes into request area
+let requestEditor = ace.edit("requestArea");
+let body;
+requestEditor.getSession().on("change", function() {
+  body = requestEditor.getSession().getValue();
+});
 
 let envelope =
   '<soapenv:Envelope xmlns:bsvc="urn:com.workday/bsvc" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">' +
@@ -43,13 +55,6 @@ let envelope =
   "</soapenv:Body></soapenv:Envelope>";
 
 // requestArea.value.trim()
-
-let format = require("xml-formatter");
-let formattedXml = format(envelope);
-
-let responseEditor = ace.edit("responseArea");
-responseEditor.setTheme("ace/theme/textmate");
-responseEditor.getSession().setValue(formattedXml);
 
 // functions
 function soapRequest() {
@@ -82,7 +87,8 @@ function soapRequest() {
     let statusText = xhr.statusText;
     console.log("Status: " + status + " " + statusText);
     // responseArea.innerText = results;
-    responseEditor.setValue(results);
+    let formattedXml = format(results);
+    responseEditor.getSession().setValue(formattedXml);
     showResponse();
   };
 
@@ -94,11 +100,13 @@ function soapRequest() {
 }
 
 function tests() {
-  console.log("SUV: " + suv);
+  console.log("\n\nSUV: " + suv);
   console.log("Password: " + password);
   console.log("URL: " + url);
   console.log("Combined URL:\n" + proxyurl + url);
-  console.log("Body\n" + body);
+  console.log("Web Service: " + webService);
+  console.log("Operation: " + operation);
+  console.log("Body\n" + requestArea);
   console.log("Envelope:\n" + envelope);
 }
 
@@ -110,6 +118,6 @@ function tests() {
 
 // submit button Action
 document.getElementById("submit").onclick = function() {
-  soapRequest();
   tests();
+  // soapRequest();
 };
