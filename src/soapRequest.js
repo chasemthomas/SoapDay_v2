@@ -33,9 +33,10 @@ let url =
 // Input bodyText to request area. For Testing.
 let bodyText =
   '<bsvc:Get_Purchase_Items_Request bsvc:version="v33.0"><bsvc:Request_References><bsvc:Purchase_Item_Reference bsvc:Descriptor=""><bsvc:ID bsvc:type="wid">c5484e4ea52610e2d5127574b8f149b4</bsvc:ID></bsvc:Purchase_Item_Reference></bsvc:Request_References></bsvc:Get_Purchase_Items_Request>';
-requestEditor
-  .getSession()
-  .setValue(format(bodyText, { collapseContent: true }));
+
+// requestEditor
+//   .getSession()
+//   .setValue(format(bodyText, { collapseContent: true }));
 
 // This code is needed when user pastes into request area ??
 let body = requestEditor.getSession().getValue();

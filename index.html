@@ -11,8 +11,8 @@
       </header>
       <main>
         <section id="detailsArea">
-          <div id="login">
-            <form action="" method="get" class="">
+          <form action="" method="get" class="">
+            <div id="loginDetails">
               <fieldset>
                 <legend>SUV Login</legend>
                 <div class="form">
@@ -43,45 +43,30 @@
                   />
                 </div>
               </fieldset>
-
+            </div>
+            <div id="webServiceDetails">
               <fieldset>
                 <legend>Web Service Operation</legend>
                 <div class="form">
                   <label for="wsDropdown">Web Service:</label>
-                  <input
-                    list="webService"
-                    id="wsDropdown"
-                    class="inputType"
-                    name="webService"
-                    value="Financials_Implementation_Service"
-                  />
-                  <datalist id="webService"></datalist>
+                  <select id="wsDropdown" class="dropdown" name="wsDropdown"> </select>
+                  <datalist id="wsDropdownList"></datalist>
                 </div>
                 <div class="form">
                   <label for="opDropdown">Operation:</label>
-                  <input
-                    list="operation"
-                    id="opDropdown"
-                    class="inputType"
-                    name="operation"
-                    value="Get_Purchase_Items_Request"
-                  />
-                  <datalist id="operation"></datalist>
+                  <select id="opDropdown" class="dropdown" name="opDropdown"> </select>
                 </div>
                 <div class="form">
                   <label for="vrsDropdown">Version:</label>
-                  <input
-                    list="version"
-                    id="vrsDropdown"
-                    class="inputType"
-                    name="version"
-                    value="v33.0"
-                  />
-                  <datalist id="version"></datalist>
+                  <select id="vrsDropdown" class="dropdown" name="vrsDropdown"></select>
                 </div>
+
+                <input id="getTemplate" class="form" type="button" value="Get Template">
+
               </fieldset>
-            </form>
-          </div>
+              
+            </div>
+          </form>
         </section>
         
         <section id="xmlArea">

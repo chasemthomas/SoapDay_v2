@@ -9,7 +9,6 @@ body {
   height: 100vh;
   display: grid;
   grid-template-rows: 0.5fr 10fr 0.5fr;
-  /* row-gap: 1em 2em 3em; */
   font-family: "Roboto", "Helvetica Neue", "Helvetica", Arial, sans-serif;
 }
 
@@ -18,7 +17,6 @@ main {
   display: grid;
   grid-template-columns: 1fr 10fr;
   column-gap: 1em;
-  /* border: 1px dashed green; */
 }
 
 /* Header */
@@ -40,27 +38,25 @@ header h1 {
 #detailsArea {
   background-color: white;
   border-radius: 4px;
-  /* border-right: 1px dashed black; */
+  font-size: 14px;
+  padding-top: 3.5em;
 }
 
-h2 {
+/* h2 {
   color: #464646;
   font-size: 18px;
   font-weight: bold;
   margin-top: 1em;
   margin-bottom: 5px;
-}
+} */
 
 fieldset {
-  margin: 1em;
   border: none;
-  /* border: 1px solid #ced3d9;
-  border-radius: 3px; */
 }
 
 legend {
   font-weight: bold;
-  margin-left: 85px;
+  margin-left: 118px;
 }
 
 label {
@@ -70,16 +66,28 @@ label {
   width: 100px;
 }
 
-input {
+input,
+select {
   background-color: #fff;
   border: 1px solid #ced3d9;
   border-radius: 3px;
   color: #333333;
-  height: 36px;
   padding: 1px 0px 1px 3px;
   margin: 5px;
-  min-width: 200px;
+  width: 250px;
+  height: 38px;
+  /* font-size: 1em; */
   /* selection-background-color: #e8ebed; */
+}
+
+datalist {
+  background-color: blue;
+}
+
+input::-webkit-calendar-picker-indicator {
+  opacity: 100;
+  background-color: white;
+  color: #7b858f;
 }
 
 form.form {
@@ -99,13 +107,29 @@ input {
 label {
   padding-right: 10px;
 }
-#login > form {
-  font-size: 14px;
-}
 
 .form label {
   font: 140px;
 }
+
+#getTemplate {
+  background-color: #f0f1f2;
+  /* border: 1px solid #ced3d9; */
+  border-radius: 19px;
+  font-weight: 525;
+  font: 14px;
+  height: 40px;
+  width: 161px;
+  margin: 1em 6em;
+}
+
+/* #getTemplate:hover {
+}
+#getTemplate:active {
+  background-color: #ffa126;
+  border-width: 2px;
+  border-color: #005cb9;
+} */
 
 /*  */
 /*  */

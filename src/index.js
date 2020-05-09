@@ -1,9 +1,12 @@
 import "./normalize.css";
 import "./styles.css";
 
+import "./scraper";
+
 var requestEditor = ace.edit("requestArea");
 requestEditor.setTheme("ace/theme/textmate");
 requestEditor.getSession().setMode("ace/mode/xml");
+// requestEditor.setAutoScrollEditorIntoView(true);
 // requestEditor.session.setUseWrapMode(true);
 
 var responseEditor = ace.edit("responseArea");
